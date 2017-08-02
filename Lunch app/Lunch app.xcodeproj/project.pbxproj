@@ -14,6 +14,7 @@
 		6B501CB81F1EB0ED00E13CAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B501CB61F1EB0ED00E13CAE /* LaunchScreen.storyboard */; };
 		6B501CC31F1EB0ED00E13CAE /* Lunch_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B501CC21F1EB0ED00E13CAE /* Lunch_appTests.swift */; };
 		6B501CCE1F1EB0ED00E13CAE /* Lunch_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B501CCD1F1EB0ED00E13CAE /* Lunch_appUITests.swift */; };
+		6B93ECD91F3131920018E3E5 /* forgot_password_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93ECD81F3131920018E3E5 /* forgot_password_view.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6B501CC91F1EB0ED00E13CAE /* Lunch appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lunch appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B501CCD1F1EB0ED00E13CAE /* Lunch_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunch_appUITests.swift; sourceTree = "<group>"; };
 		6B501CCF1F1EB0ED00E13CAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B93ECD81F3131920018E3E5 /* forgot_password_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgot_password_view.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				6B501CB41F1EB0ED00E13CAE /* Assets.xcassets */,
 				6B501CB61F1EB0ED00E13CAE /* LaunchScreen.storyboard */,
 				6B501CB91F1EB0ED00E13CAE /* Info.plist */,
+				6B93ECD81F3131920018E3E5 /* forgot_password_view.swift */,
 			);
 			path = "Lunch app";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B93ECD91F3131920018E3E5 /* forgot_password_view.swift in Sources */,
 				6B501CB01F1EB0ED00E13CAE /* ViewController.swift in Sources */,
 				6B501CAE1F1EB0ED00E13CAE /* AppDelegate.swift in Sources */,
 			);

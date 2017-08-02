@@ -12,11 +12,16 @@
         <!--Navigation Controller-->
         <scene sceneID="4hM-4P-kQX">
             <objects>
-                <navigationController id="U72-PY-ulY" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="U72-PY-ulY" sceneMemberID="viewController">
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QFR-6x-IIF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="qc8-DP-3mL">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="k2g-PU-j0g"/>
                     </connections>
@@ -34,7 +39,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgG-Kn-tCF">
@@ -100,7 +105,7 @@
                                 </state>
                                 <connections>
                                     <action selector="login_button_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bDi-GW-UUk"/>
-                                    <segue destination="snL-lV-cXA" kind="show" id="dFY-WF-dLl"/>
+                                    <segue destination="snL-lV-cXA" kind="show" identifier="login_segue" id="dFY-WF-dLl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HWH-N1-Fc8">
@@ -122,29 +127,37 @@
                                     <segue destination="EcF-uc-q2t" kind="show" id="akr-JW-cmA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOz-3g-jc9">
+                                <rect key="frame" x="99" y="364" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.57276205965606297" green="0.88438712527683128" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="0yB-WP-EfC"/>
                     <connections>
+                        <outlet property="debug_text_label" destination="hOz-3g-jc9" id="PMj-ZX-1qB"/>
                         <outlet property="password_text" destination="OgG-Kn-tCF" id="jpN-ZB-c1M"/>
                         <outlet property="username_text" destination="tlP-Rl-nXH" id="PPw-lU-jcQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="103"/>
+            <point key="canvasLocation" x="-514" y="65"/>
         </scene>
-        <!--View Controller-->
+        <!--Forgot password view-->
         <scene sceneID="1VO-Fz-2Z8">
             <objects>
-                <viewController id="EcF-uc-q2t" sceneMemberID="viewController">
+                <viewController id="EcF-uc-q2t" customClass="forgot_password_view" customModule="Lunch_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f8R-KS-opZ"/>
                         <viewControllerLayoutGuide type="bottom" id="ApW-MA-Oko"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xha-bR-ZlU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email address associated with username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id2-nW-h21">
@@ -161,6 +174,7 @@
                                     <color key="titleColor" red="0.16731453930000001" green="0.24795170289999999" blue="0.78008426050000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="send_pressed:" destination="EcF-uc-q2t" eventType="touchUpInside" id="obh-aD-xpP"/>
                                     <segue destination="QSL-ET-Ej6" kind="show" id="l0X-Ze-nRu"/>
                                 </connections>
                             </button>
@@ -174,6 +188,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.57276205970000005" green="0.88438712529999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="new_email" destination="xys-sv-1cz" id="OeN-Xg-Cc2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGQ-CB-LZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,7 +205,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jbq-fD-rCQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Qs-gd-IQK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email sent successfully!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTZ-BN-E5Q">
@@ -223,7 +240,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qIh-Ot-hMj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o4e-uW-W8l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.57276205970000005" green="0.88438712529999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -241,7 +258,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bLx-hy-h0a"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rNi-Ha-41b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.57276205970000005" green="0.88438712529999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
