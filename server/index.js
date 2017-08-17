@@ -2,7 +2,11 @@ var http = require('http'),
     express = require('express'),
     MongoClient = require('mongodb').MongoClient,
     Server = require('mongodb').Server,
-    nodemailer = require('nodemailer');
+    nodemailer = require('nodemailer'),
+    mongo = require('mongodb');
+
+
+var url = "mongodb://localhost:27017/lunchapp";
 
 var app=express()
 var bodyParser = require('body-parser');
@@ -39,10 +43,52 @@ transporter.sendMail(mailOptions, function(error, info){
 })
 
 app.post('/login', function (req, res) {
-  console.log(req.body.email)
-  console.log(req.body.password)
+
+  if (req.body.password=='hello') res.status(200).send({body:"Hi"});
 })
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
+
+
+app.post('/signup', function (req, res) {
+
+
+	var record = {'name' : req.body.name,
+			  'email' : req.body.email,
+			  'password' : encrypt(req.body.password)
+			  };
+  	console.log(record)
+	MongoClient.connect(url, function(err, db) {
+  	if (err) throw err;
+  	db.collection("users").insertOne(record, function(err, res) {
+    if (err) throw err;
+    console.log("1 document inserted");
+    db.close();
+  });
+});
+})
+
+
+// Nodejs encryption with CTR
+var crypto = require('crypto'),
+    algorithm = 'aes-256-ctr',
+    password = 'd6F3Efeq';
+
+function encrypt(text){
+  var cipher = crypto.createCipher(algorithm,password)
+  var crypted = cipher.update(text,'utf8','hex')
+  crypted += cipher.final('hex');
+  return crypted;
+}
+ 
+function decrypt(text){
+  var decipher = crypto.createDecipher(algorithm,password)
+  var dec = decipher.update(text,'hex','utf8')
+  dec += decipher.final('utf8');
+  return dec;
+}
+ 
+var hw = encrypt("hello world")
+
