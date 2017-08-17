@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var username_text: UITextField!
     
     @IBOutlet weak var password_text: UITextField!
@@ -61,6 +59,7 @@ class ViewController: UIViewController {
             request.httpBody = jsonData
             
             let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+                
                 if error != nil{
                     print("Error -> \(error)")
                     return
@@ -68,8 +67,7 @@ class ViewController: UIViewController {
                 do {
                     let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
                     print("Result -> \(result)")
-                    
-                } catch {
+                                    } catch {
                     print("Error -> \(error)")
                 }
             }
@@ -78,9 +76,6 @@ class ViewController: UIViewController {
         } catch {
             print(error)
         }
-        
     }
-    
-
 }
 
